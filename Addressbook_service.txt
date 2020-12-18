@@ -390,3 +390,59 @@ mysql> select * from contact_details;
 +-----------+-------------+-----------+-------------+--------+----------+
 4 rows in set (0.00 sec)
 
+#UC13 Check retrieve queries for Normalized tables
+
+
+mysql> SELECT person_name from person_details inner join contact_details
+    -> on person_details.person_id = contact_details.person_id
+    -> where contact_details.state = 'tamilnadu';
++-------------+
+| person_name |
++-------------+
+| Murali      |
+| Viknesh     |
++-------------+
+2 rows in set (0.00 sec)
+
+mysql> select person_name from person_details inner join contact_details
+    -> on person_details.person_id = contact_details.person_id
+    -> where contact_details.city = 'trichy';
++-------------+
+| person_name |
++-------------+
+| Murali      |
+| Viknesh     |
++-------------+
+2 rows in set (0.00 sec)
+
+mysql> select COUNT(person_name) as COUNT_CITY from person_details inner join contact_details
+    -> on person_details.person_id = contact_details.person_id
+    -> where contact_details.city = 'trichy';
++------------+
+| COUNT_CITY |
++------------+
+|          2 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select COUNT(person_name) as COUNT_STATE from person_details inner join contact_details
+    -> on person_details.person_id = contact_details.person_id
+    -> where contact_details.state = 'tamilnadu';
++-------------+
+| COUNT_STATE |
++-------------+
+|           2 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select person_name from person_details inner join contact_details
+    -> on person_details.person_id = contact_details.person_id
+    -> where contact_details.state = 'tamilnadu'
+    -> ORDER BY person_details.person_name;
++-------------+
+| person_name |
++-------------+
+| Murali      |
+| Viknesh     |
++-------------+
+2 rows in set (0.00 sec)
