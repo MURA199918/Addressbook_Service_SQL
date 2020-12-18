@@ -38,3 +38,41 @@ mysql> show databases;
 
 mysql> use addressbookSQL_service;
 Database changed
+
+#UC2: Create table Address_Book 
+
+mysql> select database()
+    -> ;
++------------------------+
+| database()             |
++------------------------+
+| addressbooksql_service |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> create table address_book (
+    -> firstname VARCHAR(100) NOT NULL,
+    -> lastname VARCHAR(100) NOT NULL,
+    -> address VARCHAR(150),
+    -> city VARCHAR(50),
+    -> state VARCHAR(50),
+    -> zip int unsigned,
+    -> phone int unsigned NOT NULL,
+    -> email VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> describe address_book;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| firstname | varchar(100) | NO   |     | NULL    |       |
+| lastname  | varchar(100) | NO   |     | NULL    |       |
+| address   | varchar(150) | YES  |     | NULL    |       |
+| city      | varchar(50)  | YES  |     | NULL    |       |
+| state     | varchar(50)  | YES  |     | NULL    |       |
+| zip       | int unsigned | YES  |     | NULL    |       |
+| phone     | int unsigned | NO   |     | NULL    |       |
+| email     | varchar(50)  | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
