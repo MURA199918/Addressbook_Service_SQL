@@ -1,0 +1,40 @@
+# UC1 Create DataBase addressbookSQL_service
+
+mysql> show databases;
++--------------------------+
+| Database                 |
++--------------------------+
+| employee_payroll_service |
+| information_schema       |
+| mysql                    |
+| payroll_service          |
+| payrollservice           |
+| performance_schema       |
+| sakila                   |
+| sys                      |
+| world                    |
++--------------------------+
+9 rows in set (0.00 sec)
+
+mysql> create database addressbookSQL_service;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------------+
+| Database                 |
++--------------------------+
+| addressbooksql_service   |
+| employee_payroll_service |
+| information_schema       |
+| mysql                    |
+| payroll_service          |
+| payrollservice           |
+| performance_schema       |
+| sakila                   |
+| sys                      |
+| world                    |
++--------------------------+
+10 rows in set (0.01 sec)
+
+mysql> use addressbookSQL_service;
+Database changed
