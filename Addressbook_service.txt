@@ -76,3 +76,20 @@ mysql> describe address_book;
 | email     | varchar(50)  | YES  |     | NULL    |       |
 +-----------+--------------+------+-----+---------+-------+
 8 rows in set (0.01 sec)
+
+UC3: Ability to add Contacts into Address_Book
+
+mysql> INSERT INTO address_book VALUES
+    -> ('Murali', 'saravanan', 'nagar', 'trichy', 'tamilnadu', 620019, 945883, 'murali@abc.com'),
+    -> ('Priya', 'hello', 'nagar', 'mumbai', 'maharashtra', 400076, 983765, 'priya@abc.com');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * from address_book;
++-----------+-----------+---------+--------+-------------+--------+--------+----------------+
+| firstname | lastname  | address | city   | state       | zip    | phone  | email          |
++-----------+-----------+---------+--------+-------------+--------+--------+----------------+
+| Murali    | saravanan | nagar   | trichy | tamilnadu   | 620019 | 945883 | murali@abc.com |
+| Priya     | hello     | nagar   | mumbai | maharashtra | 400076 | 983765 | priya@abc.com  |
++-----------+-----------+---------+--------+-------------+--------+--------+----------------+
+2 rows in set (0.00 sec)
