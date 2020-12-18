@@ -121,3 +121,30 @@ mysql> select * from address_book;
 | Murali    | saravanan | firstcross | trichy | tamilnadu | 620019 | 945883 | murali@abc.com |
 +-----------+-----------+------------+--------+-----------+--------+--------+----------------+
 1 row in set (0.00 sec)
+
+#UC6 Retrive data from table address_book
+
+mysql> INSERT INTO address_book VALUES
+    -> ('Priya', 'hello', 'nagar', 'mumbai', 'maharashtra', 400076, 98321, 'priya@abc.com'),
+    -> ('Viknesh', 'welcome', 'nagar', 'trichy', 'tamilnadu', 620018, 98299, 'vicky@abc.com');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from address_book;
++-----------+-----------+------------+--------+-------------+--------+--------+----------------+
+| firstname | lastname  | address    | city   | state       | zip    | phone  | email          |
++-----------+-----------+------------+--------+-------------+--------+--------+----------------+
+| Murali    | saravanan | firstcross | trichy | tamilnadu   | 620019 | 945883 | murali@abc.com |
+| Priya     | hello     | nagar      | mumbai | maharashtra | 400076 |  98321 | priya@abc.com  |
+| Viknesh   | welcome   | nagar      | trichy | tamilnadu   | 620018 |  98299 | vicky@abc.com  |
++-----------+-----------+------------+--------+-------------+--------+--------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> SELECT * from address_book where city = 'trichy';
++-----------+-----------+------------+--------+-----------+--------+--------+----------------+
+| firstname | lastname  | address    | city   | state     | zip    | phone  | email          |
++-----------+-----------+------------+--------+-----------+--------+--------+----------------+
+| Murali    | saravanan | firstcross | trichy | tamilnadu | 620019 | 945883 | murali@abc.com |
+| Viknesh   | welcome   | nagar      | trichy | tamilnadu | 620018 |  98299 | vicky@abc.com  |
++-----------+-----------+------------+--------+-----------+--------+--------+----------------+
+2 rows in set (0.00 sec)
