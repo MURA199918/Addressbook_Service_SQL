@@ -166,3 +166,33 @@ mysql> SELECT COUNT(*) from address_book WHERE state = 'maharashtra';
 |        1 |
 +----------+
 1 row in set (0.00 sec)
+
+#UC8 Retrieve entries sorted alphabetically by Person’s name from table
+
+
+mysql> INSERT INTO address_book VALUES
+    -> ('John','willow', 'secondcross', 'kolkata', 'kerela', 356987, 9877222, 'john@abc.com'),
+    -> ('Rick', 'welx', 'thirdcross', 'bangalore', 'karnataka', 234567, 999888, 'rick@abc.com');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from address_book;
++-----------+-----------+-------------+-----------+-------------+--------+---------+----------------+
+| firstname | lastname  | address     | city      | state       | zip    | phone   | email          |
++-----------+-----------+-------------+-----------+-------------+--------+---------+----------------+
+| Murali    | saravanan | firstcross  | trichy    | tamilnadu   | 620019 |  945883 | murali@abc.com |
+| Priya     | hello     | nagar       | mumbai    | maharashtra | 400076 |   98321 | priya@abc.com  |
+| Viknesh   | welcome   | nagar       | trichy    | tamilnadu   | 620018 |   98299 | vicky@abc.com  |
+| John      | willow    | secondcross | kolkata   | kerela      | 356987 | 9877222 | john@abc.com   |
+| Rick      | welx      | thirdcross  | bangalore | karnataka   | 234567 |  999888 | rick@abc.com   |
++-----------+-----------+-------------+-----------+-------------+--------+---------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> SELECT * from address_book WHERE state = 'tamilnadu' ORDER BY firstname;
++-----------+-----------+------------+--------+-----------+--------+--------+----------------+
+| firstname | lastname  | address    | city   | state     | zip    | phone  | email          |
++-----------+-----------+------------+--------+-----------+--------+--------+----------------+
+| Murali    | saravanan | firstcross | trichy | tamilnadu | 620019 | 945883 | murali@abc.com |
+| Viknesh   | welcome   | nagar      | trichy | tamilnadu | 620018 |  98299 | vicky@abc.com  |
++-----------+-----------+------------+--------+-----------+--------+--------+----------------+
+2 rows in set (0.00 sec)
