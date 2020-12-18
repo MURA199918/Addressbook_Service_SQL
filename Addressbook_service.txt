@@ -240,3 +240,22 @@ mysql> SELECT COUNT(*) as COUNT from address_book WHERE type = 'friends';
 |     3 |
 +-------+
 1 row in set (0.00 sec)
+
+#UC11 Add contact to both Friend and Family
+
+mysql> INSERT into address_book VALUES
+    -> ('Murali', 'saravanan', 'firstcross', 'trichy', 'tamilnadu', 620019, 945883, 'murali@abc.com', 'null', 'family');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from address_book;
++-----------+-----------+-------------+-----------+-------------+--------+---------+----------------+--------+---------+
+| firstname | lastname  | address     | city      | state       | zip    | phone   | email          | b_name | type    |
++-----------+-----------+-------------+-----------+-------------+--------+---------+----------------+--------+---------+
+| Murali    | saravanan | firstcross  | trichy    | tamilnadu   | 620019 |  945883 | murali@abc.com | NULL   | friends |
+| Priya     | hello     | nagar       | mumbai    | maharashtra | 400076 |   98321 | priya@abc.com  | NULL   | friends |
+| Viknesh   | welcome   | nagar       | trichy    | tamilnadu   | 620018 |   98299 | vicky@abc.com  | NULL   | friends |
+| John      | willow    | secondcross | kolkata   | kerela      | 356987 | 9877222 | john@abc.com   | NULL   | family  |
+| Rick      | welx      | thirdcross  | bangalore | karnataka   | 234567 |  999888 | rick@abc.com   | NULL   | family  |
+| Murali    | saravanan | firstcross  | trichy    | tamilnadu   | 620019 |  945883 | murali@abc.com | null   | family  |
++-----------+-----------+-------------+-----------+-------------+--------+---------+----------------+--------+---------+
+6 rows in set (0.00 sec)
